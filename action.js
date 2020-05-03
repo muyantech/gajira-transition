@@ -18,6 +18,7 @@ module.exports = class {
     const { argv } = this
 
     const issueId = argv.issue
+    console.log("issue Id found: [" + issueId+ "]");
     if (issueId == "") {
       console.log("No issue found on previous step, returning");
       return;
