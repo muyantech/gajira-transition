@@ -18,6 +18,9 @@ module.exports = class {
     const { argv } = this
 
     const issueId = argv.issue
+    if (issueId == "") {
+      console.log("No issue found on previous step, returning");
+    }
     const { transitions } = await this.Jira.getIssueTransitions(issueId)
 
     const transitionToApply = _.find(transitions, (t) => {
